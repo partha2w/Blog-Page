@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
-const API_URL = "http://localhost:4000";
+const API_URL = "https://blog-page-xa1f.onrender.com";
 const port = 3000;
 const app = express();
 app.use(express.static("public"));

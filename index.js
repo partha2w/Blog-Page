@@ -1,5 +1,10 @@
 import express from "express";
 import bodyParser from "body-parser";
+
+const cors = require('cors');
+app.use(cors({ origin: '*' })); // Allow all origins or specify your server.js origin
+
+
 const posts = [
     {
         id:1,
