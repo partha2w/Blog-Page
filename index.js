@@ -1,9 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-
-const cors = require('cors');
-app.use(cors({ origin: '*' })); // Allow all origins or specify your server.js origin
-
+import cors from 'cors';
 
 const posts = [
     {
@@ -16,6 +13,7 @@ const posts = [
 ]
 const port = 4000;
 const app = express();
+app.use(cors({ origin: '*' })); // Allow all origins or specify your server.js origin
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 function getCurrentDate(){
