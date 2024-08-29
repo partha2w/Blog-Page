@@ -1,0 +1,35 @@
+<%- include("components/header.ejs") %>
+    <div>
+    <header>
+        <h1><%=heading%></h1>
+    </header>
+       <%if(locals.post){ %>
+            <form class="post-form" action="/api/edit-post/<%=post.id%>" method="POST">
+                <label for="title">Title</label>
+                <input value="<%=post.title%>" type="text" id="title" name="title" required>
+                
+                <label for="content">Content</label>
+                <textarea id="content" name="content" required rows="5"><%=post.content%></textarea>
+                
+                <label for="author">Author</label>
+                <input value="<%=post.author%>" type="text" id="author" name="author" required>
+                
+                <button type="submit"><%=submit%></button>
+            </form>
+        <%}else{%>
+            <form class="post-form" id="newPostForm" action="/submit-post" method="POST">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
+            
+                <label for="content">Content</label>
+                <textarea id="content" name="content" required rows="5"></textarea>
+            
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" required>
+            
+                <button type="submit"><%=submit%></button>
+            </form>
+        <%}%>
+    </div>
+
+    <%- include("components/footer.ejs") %>
